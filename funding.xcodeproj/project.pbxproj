@@ -74,9 +74,9 @@
 		0F32F2C4235AAB6100A438D2 /* funding */ = {
 			isa = PBXGroup;
 			children = (
+				0F2F1975235E5E6C003CB9F3 /* Delegates */,
 				82CADA882CF0E6B10089649E /* Module */,
 				0F30981A255BB6A1009A1A9D /* Assets.xcassets */,
-				0F2F1975235E5E6C003CB9F3 /* Delegates */,
 				0F32F2D5235AAB6400A438D2 /* Info.plist */,
 				0F88746D2378C388006F2123 /* funding.entitlements */,
 			);
