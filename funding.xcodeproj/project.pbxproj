@@ -11,8 +11,8 @@
 		0F32F2C6235AAB6100A438D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F32F2C5235AAB6100A438D2 /* AppDelegate.swift */; };
 		0F32F2C8235AAB6100A438D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F32F2C7235AAB6100A438D2 /* SceneDelegate.swift */; };
 		0F8874702378C3FA006F2123 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F88746F2378C3FA006F2123 /* CloudKit.framework */; };
-		82CADA8A2CF0E6C70089649E /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CADA892CF0E6C70089649E /* TableViewController.swift */; };
-		82CADA8C2CF0E8960089649E /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CADA8B2CF0E8960089649E /* TestView.swift */; };
+		82CADA8A2CF0E6C70089649E /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CADA892CF0E6C70089649E /* HomeTableViewController.swift */; };
+		82CADA8C2CF0E8960089649E /* HomeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CADA8B2CF0E8960089649E /* HomeTableView.swift */; };
 		82CADA8E2CF0E9980089649E /* NsLayoutConstraints+Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CADA8D2CF0E9980089649E /* NsLayoutConstraints+Path.swift */; };
 		82CADA902CF0EB4A0089649E /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CADA8F2CF0EB4A0089649E /* CustomCell.swift */; };
 		82CADA922CF12F7E0089649E /* DynamicHeightTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CADA912CF12F7E0089649E /* DynamicHeightTableView.swift */; };
@@ -26,8 +26,8 @@
 		0F32F2D5235AAB6400A438D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F88746D2378C388006F2123 /* funding.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = funding.entitlements; sourceTree = "<group>"; };
 		0F88746F2378C3FA006F2123 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
-		82CADA892CF0E6C70089649E /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		82CADA8B2CF0E8960089649E /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		82CADA892CF0E6C70089649E /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		82CADA8B2CF0E8960089649E /* HomeTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableView.swift; sourceTree = "<group>"; };
 		82CADA8D2CF0E9980089649E /* NsLayoutConstraints+Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NsLayoutConstraints+Path.swift"; sourceTree = "<group>"; };
 		82CADA8F2CF0EB4A0089649E /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		82CADA912CF12F7E0089649E /* DynamicHeightTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightTableView.swift; sourceTree = "<group>"; };
@@ -74,6 +74,8 @@
 		0F32F2C4235AAB6100A438D2 /* funding */ = {
 			isa = PBXGroup;
 			children = (
+				30DE60D42CF4B94B006645BF /* Extensions */,
+				30DE60D32CF4B93F006645BF /* Components */,
 				0F2F1975235E5E6C003CB9F3 /* Delegates */,
 				82CADA882CF0E6B10089649E /* Module */,
 				0F30981A255BB6A1009A1A9D /* Assets.xcassets */,
@@ -91,14 +93,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		82CADA882CF0E6B10089649E /* Module */ = {
+		30DE60D32CF4B93F006645BF /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				82CADA912CF12F7E0089649E /* DynamicHeightTableView.swift */,
+				82CADA8F2CF0EB4A0089649E /* CustomCell.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		30DE60D42CF4B94B006645BF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				82CADA8D2CF0E9980089649E /* NsLayoutConstraints+Path.swift */,
-				82CADA892CF0E6C70089649E /* TableViewController.swift */,
-				82CADA8B2CF0E8960089649E /* TestView.swift */,
-				82CADA8F2CF0EB4A0089649E /* CustomCell.swift */,
-				82CADA912CF12F7E0089649E /* DynamicHeightTableView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		82CADA882CF0E6B10089649E /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				82CADA892CF0E6C70089649E /* HomeTableViewController.swift */,
+				82CADA8B2CF0E8960089649E /* HomeTableView.swift */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -134,7 +150,7 @@
 					New,
 				);
 				LastSwiftUpdateCheck = 1110;
-				LastUpgradeCheck = 1530;
+				LastUpgradeCheck = 1610;
 				ORGANIZATIONNAME = "Daniel Nzioka";
 				TargetAttributes = {
 					0F32F2C1235AAB6100A438D2 = {
@@ -177,8 +193,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				82CADA922CF12F7E0089649E /* DynamicHeightTableView.swift in Sources */,
-				82CADA8A2CF0E6C70089649E /* TableViewController.swift in Sources */,
-				82CADA8C2CF0E8960089649E /* TestView.swift in Sources */,
+				82CADA8A2CF0E6C70089649E /* HomeTableViewController.swift in Sources */,
+				82CADA8C2CF0E8960089649E /* HomeTableView.swift in Sources */,
 				0F32F2C6235AAB6100A438D2 /* AppDelegate.swift in Sources */,
 				0F32F2C8235AAB6100A438D2 /* SceneDelegate.swift in Sources */,
 				82CADA8E2CF0E9980089649E /* NsLayoutConstraints+Path.swift in Sources */,
@@ -193,6 +209,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -256,6 +273,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;

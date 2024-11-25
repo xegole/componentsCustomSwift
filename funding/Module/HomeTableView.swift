@@ -1,8 +1,6 @@
 import UIKit
 
-class TestView: UIView {
-    
-    private var tableViewHeightConstraint: NSLayoutConstraint?
+class HomeTableView: UIView {
     
     private lazy var topView: UIView = {
        let view = UIView()
@@ -18,15 +16,15 @@ class TestView: UIView {
         return view
     }()
     
-    private lazy var simulatorTableView: DynamicHeightTableView = {
+    private lazy var contentTableView: DynamicHeightTableView = {
         let tableView = DynamicHeightTableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(CustomCell.self, forCellReuseIdentifier: "cell")
-        tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableView.automaticDimension
         tableView.backgroundColor = .white
         tableView.layer.cornerRadius = 16
         tableView.separatorStyle = .none
+        tableView.dynamicHeightDelegate = self
         if #available(iOS 15.0, *) {
             tableView.sectionHeaderTopPadding = 0
         }
@@ -56,13 +54,11 @@ class TestView: UIView {
     }
     
     private func setUpTableViewConstraints() {
-        addSubview(simulatorTableView)
+        addSubview(contentTableView)
         NSLayoutConstraint.activating([
-            simulatorTableView.relativeToParent(.width(margin: 30)),
-            simulatorTableView.relativeTo(topView, positioned: .below(spacing: 10))
+            contentTableView.relativeToParent(.width(margin: 30)),
+            contentTableView.relativeTo(topView, positioned: .below(spacing: 10))
         ])
-        
-        tableViewHeightConstraint = simulatorTableView.heightAnchor.constraint(equalToConstant: 0)
     }
     
     private func setUpBottomViewConstraints() {
@@ -73,13 +69,17 @@ class TestView: UIView {
     }
     
     func setDataSource(dataSource: UITableViewDataSource) {
-        simulatorTableView.dataSource = dataSource
+        contentTableView.dataSource = dataSource
     }
+}
+
+extension HomeTableView: DynamicHeightTableViewDelegate {
     
-    func validateHeightTableView() {
-        if simulatorTableView.frame.maxY > bottomView.frame.minY {
-            simulatorTableView.relativeTo(bottomView, positioned: .above(spacing: 10)).first?.isActive = true
-            print("BIGGER")
+    func didSizeChange(size: CGFloat, tableView: UITableView) {
+        let bottomMaxY = size + tableView.frame.minY
+        let bottomViewMinY = bottomView.frame.minY
+        if bottomMaxY > bottomViewMinY, bottomViewMinY != 0.0 {
+            contentTableView.relativeTo(bottomView, positioned: .above(spacing: 10)).first?.isActive = true
         }
     }
 }

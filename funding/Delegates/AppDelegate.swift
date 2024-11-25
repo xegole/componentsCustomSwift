@@ -10,7 +10,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
 
-        window?.rootViewController = UINavigationController(rootViewController: TableViewController())
+        window?.rootViewController = UINavigationController(rootViewController: HomeTableViewController())
 
         return true
     }
