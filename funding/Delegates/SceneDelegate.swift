@@ -1,11 +1,3 @@
-//
-//  SceneDelegate.swift
-//  funding
-//
-//  Created by Daniel Nzioka on 10/18/19.
-//  Copyright © 2019 Daniel Nzioka. All rights reserved.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate, UISplitViewControllerDelegate {
@@ -15,7 +7,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UISplitViewControllerDe
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         if let windowScene = scene as? UIWindowScene {
               let window = UIWindow(windowScene: windowScene)
-              window.rootViewController = TableViewController()
+            window.rootViewController = HomeTableViewController()
               self.window = window
               window.makeKeyAndVisible()
           }
@@ -48,6 +40,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UISplitViewControllerDe
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
 }
 
